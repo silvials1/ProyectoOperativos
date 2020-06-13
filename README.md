@@ -1,14 +1,14 @@
-# SO II-Final
-Documentación implementación de repositorio privado en k8s
+# Sistemas Operativos
+Implementación de un repositorio privado en k8s
 
-# Push de contenedor a repositorio privado
+## Push de contenedor a repositorio privado
 
 - docker images
 - docker commit -m "Example" a426516eef96 jpoou/my-repo:lastest
 - docker login
 - docker push jpoou/my-repo:lastest
 
-# Implementacion del repositorio privado en k8s
+## Implementacion de un repositorio privado en k8s
 
 - DOCKER_REGISTRY_SERVER=docker.io
 - DOCKER_USER=user_name
@@ -16,7 +16,7 @@ Documentación implementación de repositorio privado en k8s
 - DOCKER_PASSWORD=password
 - kubectl create secret docker-registry myregistrykey   --docker-server=$DOCKER_REGISTRY_SERVER   --docker-username=$DOCKER_USER   --docker-password=$DOCKER_PASSWORD   --docker-email=$DOCKER_EMAIL
 - kubectl get nodes
-## Crear el archivo local.yaml que contenga lo siguiente:
+### Crear archivo local.yaml:
 
 ```
 apiVersion: v1
@@ -33,6 +33,4 @@ spec:
 - kubectl get pods (Para ver el estado de todos los pods del namespaces default)
 - kubectl describe pod operativos-final
 - kubectl get pods
-```
-Debera mostrar el pod operativos-final en ready 1/1
-```
+
